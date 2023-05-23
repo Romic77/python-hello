@@ -9,8 +9,7 @@ headers = {
 }
 try:
     request = urllib.request.Request(url=url, headers=headers)
-    response = urllib.request.urlopen(request)
-    assert isinstance(response, HTTPResponse)
+    response: HTTPResponse = urllib.request.urlopen(request)
     content = response.read().decode('utf-8')
 except urllib.error.HTTPError as e:
     print("系统异常", e)
