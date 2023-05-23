@@ -39,15 +39,15 @@ def down_load(content):
     tree = lxml.etree.HTML(content)
     assert isinstance(tree, _Element)
     img_name = tree.xpath("//div[@class='container']//img[@class='lazy']/@alt")
-    img_src = tree.xpath("//div[@class='container']//img[@class='lazy']/@src")
+    img_src = tree.xpath("//div[@class='container']//img[@class='lazy']/@data-original")
 
     for i in range(len(img_name)):
         name = img_name[i]
         src = img_src[i]
-        url = 'https:' + src
-        print(name, url)
+        url = ('https:' + src).replace("_s", "")
+        # print(name, url)
         # urlretrieve 将远程的数据下载到本地
-        # urllib.request.urlretrieve(url=src, filename=name + '.jpg')
+        urllib.request.urlretrieve(url=url, filename='./images/' + name + '.jpg')
 
 
 # 获取所有 //img[@class='lazy']/@src
