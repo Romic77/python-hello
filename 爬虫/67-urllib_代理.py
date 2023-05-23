@@ -1,12 +1,12 @@
 import urllib.request
 from http.client import HTTPResponse
 
-url = "http://www.baidu.com/s?wd=ip"
+url = "https://www.baidu.com/s?wd=ip"
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
 }
 proxies = {
-    'http': '58.20.184.187:9091'
+    'http': '117.68.195.56:9999'
 }
 
 request = urllib.request.Request(headers=headers, url=url)
