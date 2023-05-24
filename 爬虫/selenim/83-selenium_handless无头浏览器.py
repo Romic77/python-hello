@@ -33,7 +33,8 @@ def browser():
     options.add_argument('--disable-gpu')
 
     # 获取chrome的浏览器位置
-    path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    # path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    path = r"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     options.binary_location = path
     browser: WebDriver = webdriver.Chrome(options=options)
     return browser
